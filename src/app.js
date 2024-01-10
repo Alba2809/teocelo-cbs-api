@@ -29,7 +29,7 @@ const __dirname = dirname(__filename);
 
 app.use(
   cors({
-    origin: "https://teocelo-cbs-production.up.railway.app",
+    origin: FRONTEND_URL,
     credentials: true,
   })
 );
