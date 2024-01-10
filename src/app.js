@@ -4,6 +4,7 @@ import { validateRol } from "./middlewares/rol.middleware.js";
 import { validateDocument } from "./middlewares/document.middleware.js";
 import { authRequired } from "./middlewares/validateToken.js";
 import { createRoles, createUsers } from "./libs/initialSetup.js";
+import { FRONTEND_URL } from "./config.js"
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
@@ -28,7 +29,7 @@ const __dirname = dirname(__filename);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: FRONTEND_URL,
     credentials: true,
   })
 );
