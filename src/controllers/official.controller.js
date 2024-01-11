@@ -8,6 +8,8 @@ import path from "path";
 
 export const createOfficial = async (req, res) => {
   const { commentsCitizen } = req.body;
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
   try {
     const folio = await getNextSequence("Official_Folio");
     const paddedCounter = folio.toString().padStart(4, "0");
@@ -33,6 +35,12 @@ export const createOfficial = async (req, res) => {
       createdAt: officialSaved.createdAt,
     });
   } catch (error) {
+    if (req.file) {
+      const file = {
+        path: path.join(__dirname, "../public/documents/" + req.file.filename),
+      };
+      deletefile(file);
+    }
     res.status(500).json({ message: error.message });
   }
 };

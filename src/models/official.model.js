@@ -26,7 +26,7 @@ const officialSchema = new mongoose.Schema(
     },
     documentAccepted: {
       type: String,
-      required: true,
+      required: false,
     },
     status: {
       type: String,
