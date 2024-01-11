@@ -45,8 +45,7 @@ export const register = async (req, res) => {
     res.cookie("token", token, {
       sameSite: "None",
       secure: true,
-      httpOnly: true,
-      path: "/",
+      httpOnly: false,
     });
 
     const userAll = await User.findOne({ email }).populate({
@@ -87,8 +86,7 @@ export const login = async (req, res) => {
     res.cookie("token", token, {
       sameSite: "None",
       secure: true,
-      httpOnly: true,
-      path: "/",
+      httpOnly: false,
     });
     res.json({
       firstname: userFound.firstname,
