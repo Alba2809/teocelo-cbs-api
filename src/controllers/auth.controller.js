@@ -42,7 +42,10 @@ export const register = async (req, res) => {
 
     const token = await createAccessToken({ id: userSaved._id });
 
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      sameSite: "None",
+      secure: true,
+    });
 
     const userAll = await User.findOne({ email }).populate({
       path: "role",
@@ -79,7 +82,10 @@ export const login = async (req, res) => {
 
     const token = await createAccessToken({ id: userFound._id });
 
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      sameSite: "None",
+      secure: true,
+    });
     res.json({
       firstname: userFound.firstname,
       lastname: userFound.lastname,
