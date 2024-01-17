@@ -63,7 +63,6 @@ const complaintSchema = new mongoose.Schema(
     },
     innumber: {
       type: String,
-      required: true,
       trim: true,
     },
     staffname: {

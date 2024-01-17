@@ -36,12 +36,14 @@ export const createUsers = async () => {
         password: await bcrypt.hash("ciudadano1", 10),
         firstname: "Juan",
         lastname: "Perez",
+        role: roles.find(role => role.name === "citizen")._id
       }).save() /* Ciudadano */,
       new User({
         email: "ciudadano2@gmail.com",
         password: await bcrypt.hash("ciudadano2", 10),
         firstname: "Jose",
         lastname: "García",
+        role: roles.find(role => role.name === "citizen")._id
       }).save() /* Ciudadano */,
       new User({
         email: "empleado1@gmail.com",
@@ -81,8 +83,8 @@ export const createUsers = async () => {
       new User({
         email: "empleado6@gmail.com",
         password: await bcrypt.hash("empleado6", 10),
-        firstname: "Área",
-        lastname: "Contraloría",
+        firstname: "Órgano de Control",
+        lastname: "Interno",
         role: roles.find(role => role.name === "employee.cs")._id
       }).save() /* Contraloría */,
       new User({

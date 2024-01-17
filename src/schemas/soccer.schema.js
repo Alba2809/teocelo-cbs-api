@@ -13,7 +13,7 @@ export const createOrUpdateTeamSchema = z.object({
     .string({
       required_error: "El nombre del equipo es requerido.",
     })
-    .max(50, {
+    .max(100, {
       message: "El nombre del equipo debe tener un máximo de 50 caracteres.",
     }),
   plays: z.number({

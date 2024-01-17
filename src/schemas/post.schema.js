@@ -7,9 +7,6 @@ export const createPostSchema = z.object({
     })
     .min(6, {
       message: "El título debe tener al menos 6 caracteres.",
-    })
-    .max(40, {
-      message: "El título debe tener un máximo de 40 caracteres.",
     }),
   type: z
     .literal("Noticia")
@@ -35,9 +32,6 @@ export const updatePostSchema = z.object({
     })
     .min(6, {
       message: "El título debe tener al menos 6 caracteres.",
-    })
-    .max(40, {
-      message: "El título debe tener un máximo de 40 caracteres.",
     }),
   type: z.string({
     required_error: "Se requiere seleccionar un tipo.",

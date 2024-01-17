@@ -78,12 +78,11 @@ export const createComplaintSchema = z.object({
       message: "El núm. exterior debe tener un máximo de 10 caracteres.",
     }),
   innumber: z
-    .string({
-      required_error: "El núm. interior es requerido.",
-    })
+    .string()
     .max(10, {
       message: "El núm. interior debe tener un máximo de 10 caracteres.",
-    }),
+    })
+    .nullable(),
   staffname: z
     .string({
       required_error: "El nombre del servidor público es requerido.",

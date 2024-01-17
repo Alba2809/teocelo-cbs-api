@@ -144,7 +144,7 @@ export const getWaterReports = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(water);
   } catch (error) {
@@ -159,7 +159,7 @@ export const getWaterRequests = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(water);
   } catch (error) {

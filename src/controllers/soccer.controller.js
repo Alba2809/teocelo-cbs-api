@@ -17,6 +17,12 @@ export const createUpdateTeam = async (req, res) => {
   } = req.body;
 
   try {
+    const teamFound = await Soccer.findOne({ teamname });
+    if (teamFound)
+      return res
+        .status(400)
+        .json([`El nombre del equipo ya está en uso.`]);
+        
     if (
       _id.startsWith("Femenil") ||
       _id.startsWith("Libre") ||

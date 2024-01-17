@@ -105,7 +105,7 @@ export const getLampReports = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(lamps);
   } catch (error) {
@@ -120,7 +120,7 @@ export const getLampRequests = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(lamps);
   } catch (error) {

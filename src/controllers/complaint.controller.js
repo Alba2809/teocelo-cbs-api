@@ -40,7 +40,7 @@ export const createComplaint = async (req, res) => {
       pcode,
       street,
       outnumber,
-      innumber,
+      innumber: innumber ?? "",
       staffname,
       staffcharge,
       staffarea,
