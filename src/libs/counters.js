@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Counter = mongoose.model(
+export const Counter = mongoose.model(
   "Counter",
   new mongoose.Schema({
     _id: { type: String, required: true },

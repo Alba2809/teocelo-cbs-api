@@ -4,7 +4,7 @@ import { validateRol } from "./middlewares/rol.middleware.js";
 import { validateDocument } from "./middlewares/document.middleware.js";
 import { authRequired } from "./middlewares/validateToken.js";
 import { createRoles, createUsers } from "./libs/initialSetup.js";
-import { FRONTEND_URL } from "./config.js"
+import { FRONTEND_URL } from "./config.js";
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
@@ -18,10 +18,11 @@ import complaintRoutes from "./routes/complaint.routes.js";
 import officialRoutes from "./routes/official.routes.js";
 import emailRoutes from "./routes/email.routes.js";
 import soccerRoutes from "./routes/soccer.routes.js";
+import visitsRoute from "./routes/counter.routes.js";
 
 const app = express();
-createRoles()
-createUsers()
+createRoles();
+createUsers();
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -55,5 +56,6 @@ app.use("/api", complaintRoutes);
 app.use("/api", emailRoutes);
 app.use("/api", officialRoutes);
 app.use("/api", soccerRoutes);
+app.use("/api", visitsRoute);
 
 export default app;
