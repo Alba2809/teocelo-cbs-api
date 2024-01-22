@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { parse, serialize } from "cookie";
 import getNextSequence, { Counter } from "../libs/counters.js";
 
 const router = Router();
@@ -14,9 +13,10 @@ router.post("/counter-visits", async (req, res) => {
 
     const counter = await getNextSequence("visits");
 
-    res.cookie("visited", counter.toString(), {
+    res.cookie("visited", true, {
       sameSite: "None",
       secure: true,
+      maxAge: 24 * 60 * 60,
       httpOnly: false,
     });
 

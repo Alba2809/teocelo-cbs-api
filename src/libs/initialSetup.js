@@ -63,7 +63,7 @@ export const createUsers = async () => {
         email: "empleado3@gmail.com",
         password: await bcrypt.hash("empleado3", 10),
         firstname: "Alumbrado",
-        lastname: "Públicp",
+        lastname: "Público",
         role: roles.find(role => role.name === "employee.sl")._id
       }).save() /* Alumbrado público sl */,
       new User({
