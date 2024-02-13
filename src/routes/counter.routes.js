@@ -8,7 +8,7 @@ router.post("/counter-visits", async (req, res) => {
     const { visited } = req.cookies;
     if (visited) {
       const counter = await Counter.findById("visits");
-      res.json({ count: counter.seq });
+      res.json({ count: counter?.seq });
     }
 
     const counter = await getNextSequence("visits");
@@ -29,7 +29,7 @@ router.post("/counter-visits", async (req, res) => {
 router.get("/counter-visits", async (req, res) => {
   try {
     const counter = await Counter.findById("visits");
-    res.json({ count: counter.seq });
+    res.json({ count: counter?.seq });
   } catch (error) {
     console.log(error);
   }

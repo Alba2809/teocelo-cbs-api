@@ -50,8 +50,8 @@ export const createComplaintSchema = z.object({
     .min(6, {
       message: "La colonia debe tener al menos 5 caracteres.",
     })
-    .max(20, {
-      message: "La colonia debe tener un máximo de 20 caracteres.",
+    .max(30, {
+      message: "La colonia debe tener un máximo de 30 caracteres.",
     }),
   pcode: z
     .string({
@@ -67,8 +67,8 @@ export const createComplaintSchema = z.object({
     .min(6, {
       message: "La calle debe tener al menos 6 caracteres.",
     })
-    .max(25, {
-      message: "La calle debe tener un máximo de 25 caracteres.",
+    .max(60, {
+      message: "La calle debe tener un máximo de 60 caracteres.",
     }),
   outnumber: z
     .string({

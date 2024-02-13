@@ -17,7 +17,7 @@ export const createUpdateTeam = async (req, res) => {
   } = req.body;
 
   try {
-    const teamFound = await Soccer.findOne({ teamname });
+    const teamFound = await Soccer.findOne({ teamname, _id: { $ne: _id } });
     if (teamFound)
       return res
         .status(400)
