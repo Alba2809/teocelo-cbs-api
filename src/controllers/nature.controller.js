@@ -60,7 +60,7 @@ export const getNatureCattle = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(nature);
   } catch (error) {
@@ -75,7 +75,7 @@ export const getNatureAgricultural = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(nature);
   } catch (error) {
@@ -90,7 +90,7 @@ export const getNatureBamboo = async (req, res) => {
       .sort({ createdAt: "desc" })
       .populate({
         path: "user",
-        select: "firstname lastname",
+        select: "firstname lastname phonenumber",
       });
     res.json(nature);
   } catch (error) {
