@@ -20,13 +20,10 @@ export const createLampRequestsSchema = z.object({
     }),
   colony: z
     .string({
-      required_error: "El número es requerido.",
+      required_error: "La colonia es requerido.",
     })
-    .min(6, {
-      message: "La colonia debe tener al menos 5 caracteres.",
-    })
-    .max(20, {
-      message: "La colonia debe tener un máximo de 20 caracteres.",
+    .max(150, {
+      message: "La colonia debe tener un máximo de 150 caracteres.",
     }),
   town: z
     .string({
@@ -35,8 +32,8 @@ export const createLampRequestsSchema = z.object({
     .min(6, {
       message: "La localidad debe tener al menos 5 caracteres.",
     })
-    .max(15, {
-      message: "La localidad debe tener un máximo de 15 caracteres.",
+    .max(150, {
+      message: "La localidad debe tener un máximo de 150 caracteres.",
     }),
   commentsCitizen: z.string().max(500, {
     message: "Los comentarios deben tener un máximo de 500 caracteres.",
@@ -54,8 +51,8 @@ export const createLampReportsSchema = z.object({
     .min(6, {
       message: "La calle debe tener al menos 6 caracteres.",
     })
-    .max(25, {
-      message: "La calle debe tener un máximo de 25 caracteres.",
+    .max(150, {
+      message: "La calle debe tener un máximo de 150 caracteres.",
     }),
   number: z
     .string({
@@ -68,11 +65,8 @@ export const createLampReportsSchema = z.object({
     .string({
       required_error: "El número es requerido.",
     })
-    .min(6, {
-      message: "La colonia debe tener al menos 5 caracteres.",
-    })
-    .max(20, {
-      message: "La colonia debe tener un máximo de 20 caracteres.",
+    .max(150, {
+      message: "La colonia debe tener un máximo de 150 caracteres.",
     }),
   town: z
     .string({
@@ -81,8 +75,8 @@ export const createLampReportsSchema = z.object({
     .min(6, {
       message: "La localidad debe tener al menos 5 caracteres.",
     })
-    .max(15, {
-      message: "La localidad debe tener un máximo de 15 caracteres.",
+    .max(150, {
+      message: "La localidad debe tener un máximo de 150 caracteres.",
     }),
   commentsCitizen: z.string().max(500, {
     message: "Los comentarios deben tener un máximo de 500 caracteres.",
